@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg1"
     tools:context=".GetStarted">
 
     <ImageView
@@ -14,15 +15,14 @@
         android:layout_marginTop="80dp"
         app:srcCompat="@drawable/rectangle_image_cover" />
 
-    <ImageButton
+    <Button
         android:id="@+id/btn_get_started"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="157dp"
+        android:layout_height="44dp"
         android:layout_below="@id/image_cover"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
         android:fontFamily="@font/poppins_regular"
-        android:text="Get Started"
-        app:srcCompat="@drawable/button_get_started"/>
+        android:text="Get Started" />
 
 </RelativeLayout>
