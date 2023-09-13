@@ -58,7 +58,7 @@
 
     <View
         android:id="@+id/logo_username"
-        android:layout_width="40dp"
+        android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_below="@+id/username"
         android:layout_alignParentLeft="true"
@@ -100,7 +100,7 @@
 
     <View
         android:id="@+id/logo_password"
-        android:layout_width="40dp"
+        android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_below="@+id/password"
         android:layout_alignParentLeft="true"
