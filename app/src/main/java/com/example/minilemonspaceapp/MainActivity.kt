@@ -1,46 +1,84 @@
 package com.example.minilemonspaceapp
 
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.minilemonspaceapp.ui.theme.MinilemonSpaceAppTheme
+import kotlinx.android.synthetic.main.activity_main.*
+import android.widget.Toast
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
+
+    private val rewardManager = RewardManager()
+    private val missionManager = MissionManager()
+    private lateinit var userAPI: UserAPI
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            MinilemonSpaceAppTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
+        setContentView(R.layout.activity_main)
+
+        //api
+        userAPI = UserAPI(this)
+
+        // Menyimpan data pengguna ke database
+        val user = UserProfile(
+            id = 0,
+            jenisProfil = "Orang Tua",
+            nama = "royan",
+            email = "royan@example.com",
+            usia = 24,
+            jenisKelamin = "Laki-Laki"
+        )
+
+        val userId = userAPI.addUser(user)
+        if (userId > 0) {
+            Toast.makeText(this, "Profil pengguna berhasil disimpan", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, "Gagal menyimpan profil pengguna", Toast.LENGTH_SHORT).show()
         }
+
+        // Mengambil semua data pengguna dari database
+        val usersCursor = userAPI.getAllUsers()
+        if (usersCursor != null) {
+            // Lakukan sesuatu dengan data pengguna (misalnya, tampilkan dalam daftar)
+        }
+
+        // Contoh: Menambahkan misi ke MissionManager saat tombol "Tambah Misi" ditekan
+        addMissionButton.setOnClickListener {
+            val mission = Mission("Misi Edukasi", 1, "Item A", 10)
+            missionManager.addMission(mission)
+            // Implementasikan logika lain yang diperlukan saat menambahkan misi
+        }
+
+        // Contoh: Memperbarui kemajuan misi saat pengguna menyelesaikan level
+        val userId = "user123" // ID pengguna
+        val missionId = "mission1" // ID misi
+        val levelCompleted = 3 // Level yang diselesaikan
+        val missionProgress = levelCompleted // Misinya mungkin memerlukan level yang sama dengan progress
+        missionManager.updateMissionProgress(missionId, missionProgress)
+
+        // Contoh: Memeriksa dan memberikan reward jika misi selesai
+        missionManager.checkMissionCompletion(userId)
+
+        // ...
     }
+
+    // ...
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+        // Menampilkan waktu bermain awal
+        updatePlayTime()
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MinilemonSpaceAppTheme {
-        Greeting("Android")
+        addRewardButton.setOnClickListener {
+            val reward = Reward("Item A", 10)
+            rewardManager.addReward(reward)
+            // Implementasikan logika lain yang diperlukan saat menambahkan reward
+        }
+
+        // Tempatkan logika lainnya di sini
+    }
+
+    private fun updatePlayTime() {
+        val playTime = rewardManager.calculatePlayTime()
+        playTimeTextView.text = "Waktu Bermain: $playTime menit"
+
     }
 }
