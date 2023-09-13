@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login"
+    android:background="@drawable/bg_login"
+    >
+
+    <TextView
+        android:id="@+id/login"
+        android:layout_width="104dp"
+        android:layout_height="48dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="87dp"
+        android:text="@string/login"
+        android:textAppearance="@style/login"
+        android:gravity="center_horizontal|top"/>
+
+    <View
+        android:id="@+id/logo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/login"
+        android:background="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="104dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="83dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="249dp"
+        android:text="@string/username"
+        android:textAppearance="@style/username"
+        android:gravity="top"/>
+
+    <EditText
+        android:id="@+id/form_username"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/username"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="83dp"
+        android:layout_marginRight="83dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="279dp"
+        android:hint="Username"
+        android:inputType="text"
+        android:maxLength="100"
+        android:background="@drawable/form"
+        android:paddingLeft="50dp"/>
+
+    <View
+        android:id="@+id/logo_username"
+        android:layout_width="40dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/username"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="83dp"
+        android:layout_marginRight="83dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="279dp"
+        android:text="@string/username"
+        android:background="@drawable/logo_username"/>
+
+    <TextView
+        android:id="@+id/password"
+        android:layout_width="104dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/logo_username"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="83dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="330dp"
+        android:text="@string/password"
+        android:textAppearance="@style/password"
+        android:gravity="top"/>
+
+    <EditText
+        android:id="@+id/form_password"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/password"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="83dp"
+        android:layout_marginRight="83dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="360dp"
+        android:hint="Password"
+        android:inputType="text"
+        android:maxLength="100"
+        android:background="@drawable/form"
+        android:paddingLeft="50dp"/>
+
+    <View
+        android:id="@+id/logo_password"
+        android:layout_width="40dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/password"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="83dp"
+        android:layout_marginRight="83dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="360dp"
+        android:text="@string/username"
+        android:background="@drawable/logo_password"/>
+
+    <View
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/logo_password"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="83dp"
+        android:layout_marginRight="83dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="420dp"
+        android:background="@drawable/button_login"
+        android:paddingLeft="50dp"/>
+
+    <TextView
+        android:id="@+id/text_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo_password"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="425dp"
+        android:text="@string/text_login"
+        android:gravity="top"
+        android:textAppearance="@style/text_login"/>
+
+    <TextView
+        android:id="@+id/don_t_have_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_login"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="490dp"
+        android:text="@string/dont_have"
+        android:textAppearance="@style/dont_have"
+        android:gravity="center_horizontal|top" />
+
+    <View
+        android:id="@+id/create_account"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/don_t_have_"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="83dp"
+        android:layout_marginRight="83dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="530dp"
+        android:background="@drawable/button"/>
+
+    <TextView
+        android:id="@+id/text_create_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/create_account"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="540dp"
+        android:text="@string/create_account"
+        android:gravity="top"
+        android:textAppearance="@style/create_account"/>
+
+    <View
+        android:id="@+id/google"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/text_create_account"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="83dp"
+        android:layout_marginRight="83dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="590dp"
+        android:background="@drawable/button"/>
+
+    <TextView
+        android:id="@+id/text_google"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_create_account"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="599dp"
+        android:text="@string/google"
+        android:gravity="top"
+        android:textAppearance="@style/google"/>
+
+    <View
+        android:id="@+id/facebook"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/text_google"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="83dp"
+        android:layout_marginRight="83dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="650dp"
+        android:background="@drawable/button"/>
+
+    <TextView
+        android:id="@+id/text_google"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_google"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="659dp"
+        android:text="@string/facebook"
+        android:gravity="top"
+        android:textAppearance="@style/facebook"/>
+
+
+</RelativeLayout>

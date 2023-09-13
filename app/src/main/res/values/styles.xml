@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="get_started">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/teks_button</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="login">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/teks_button</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="username">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/teks_button</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="password">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/teks_button</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="text_login">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/teks_button</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="dont_have">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/teks_button</item>
+        <item name="android:fontFamily">@font/abhayalibre_bold</item>
+    </style>
+
+    <style name="create_account">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/teks_button</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="google">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/teks_button</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="facebook">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/teks_button</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+</resources>

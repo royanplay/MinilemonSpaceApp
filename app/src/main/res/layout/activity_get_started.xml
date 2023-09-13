@@ -15,14 +15,25 @@
         android:layout_marginTop="80dp"
         app:srcCompat="@drawable/rectangle_image_cover" />
 
-    <Button
+
+    <View
         android:id="@+id/btn_get_started"
         android:layout_width="157dp"
         android:layout_height="44dp"
         android:layout_below="@id/image_cover"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
-        android:fontFamily="@font/poppins_regular"
-        android:text="Get Started" />
+        android:background="@drawable/button_get_started"/>
+
+    <TextView
+        android:id="@+id/get_started"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image_cover"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="155dp"
+        android:text="@string/get_started"
+        android:gravity="top"
+        android:textAppearance="@style/get_started"/>
 
 </RelativeLayout>
