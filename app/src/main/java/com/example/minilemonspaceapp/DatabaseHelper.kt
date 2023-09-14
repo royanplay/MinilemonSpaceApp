@@ -5,7 +5,6 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.example.minilemon_space.UserProfile
 
 class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
@@ -60,9 +59,5 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         val db = this.readableDatabase
         return db.rawQuery("SELECT * FROM $TABLE_USERS", null)
     }
-    //DATABASE DAO
-    @Database(entities = [Mission::class], version = 1)
-    abstract class AppDatabase : RoomDatabase() {
-        abstract fun missionDao(): MissionDao
-    }
+
 }

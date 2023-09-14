@@ -1,21 +1,24 @@
-package com.example.minilemonspaceapp
-
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_main.*
-import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.minilemonspaceapp.Management.MissionAdapter
+import com.example.minilemonspaceapp.Management.MissionManagement
+import com.example.minilemonspaceapp.Management.UserAPI
+import com.example.minilemonspaceapp.Management.UserProfile
+import com.example.minilemonspaceapp.UserAPI
+import com.example.minilemonspaceapp.UserProfile
 
 class MainActivity : AppCompatActivity() {
 
-    private val rewardManager = RewardManager()
-    private val missionManager = MissionManager()
     private lateinit var userAPI: UserAPI
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //api
+        // Inisialisasi UserAPI
         userAPI = UserAPI(this)
 
         // Menyimpan data pengguna ke database
@@ -41,44 +44,15 @@ class MainActivity : AppCompatActivity() {
             // Lakukan sesuatu dengan data pengguna (misalnya, tampilkan dalam daftar)
         }
 
-        // Contoh: Menambahkan misi ke MissionManager saat tombol "Tambah Misi" ditekan
-        addMissionButton.setOnClickListener {
-            val mission = Mission("Misi Edukasi", 1, "Item A", 10)
-            missionManager.addMission(mission)
-            // Implementasikan logika lain yang diperlukan saat menambahkan misi
-        }
+        // Inisialisasi RecyclerView untuk menampilkan daftar misi
+        val missionManagement = MissionManagement(this)
+        val missions = missionManagement.getAllMissions()
 
-        // Contoh: Memperbarui kemajuan misi saat pengguna menyelesaikan level
-        val userId = "user123" // ID pengguna
-        val missionId = "mission1" // ID misi
-        val levelCompleted = 3 // Level yang diselesaikan
-        val missionProgress = levelCompleted // Misinya mungkin memerlukan level yang sama dengan progress
-        missionManager.updateMissionProgress(missionId, missionProgress)
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
+        val layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = layoutManager
 
-        // Contoh: Memeriksa dan memberikan reward jika misi selesai
-        missionManager.checkMissionCompletion(userId)
-
-        // ...
-    }
-
-    // ...
-}
-
-        // Menampilkan waktu bermain awal
-        updatePlayTime()
-
-        addRewardButton.setOnClickListener {
-            val reward = Reward("Item A", 10)
-            rewardManager.addReward(reward)
-            // Implementasikan logika lain yang diperlukan saat menambahkan reward
-        }
-
-        // Tempatkan logika lainnya di sini
-    }
-
-    private fun updatePlayTime() {
-        val playTime = rewardManager.calculatePlayTime()
-        playTimeTextView.text = "Waktu Bermain: $playTime menit"
-
+        val adapter = MissionAdapter(missions)
+        recyclerView.adapter = adapter
     }
 }

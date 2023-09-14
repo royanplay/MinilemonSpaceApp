@@ -2,7 +2,10 @@ package com.example.minilemonspaceapp
 
 import android.content.Context
 import android.database.Cursor
-import com.example.minilemon_space.Database.DatabaseHelper
+
+class Database {
+
+}
 
 class UserAPI(context: Context) {
 
