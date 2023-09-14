@@ -7,8 +7,6 @@ import com.example.minilemonspaceapp.Management.MissionAdapter
 import com.example.minilemonspaceapp.Management.MissionManagement
 import com.example.minilemonspaceapp.Management.UserAPI
 import com.example.minilemonspaceapp.Management.UserProfile
-import com.example.minilemonspaceapp.UserAPI
-import com.example.minilemonspaceapp.UserProfile
 
 class MainActivity : AppCompatActivity() {
 

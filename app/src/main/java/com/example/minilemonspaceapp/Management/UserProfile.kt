@@ -1,4 +1,4 @@
-package com.example.minilemonspaceapp
+package com.example.minilemonspaceapp.Management
 
 data class UserProfile(val id: Int,
                        val jenisProfil: String,

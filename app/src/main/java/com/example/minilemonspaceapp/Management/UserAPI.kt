@@ -1,14 +1,10 @@
-package com.example.minilemonspaceapp
+package com.example.minilemonspaceapp.Management
 
 import android.content.Context
 import android.database.Cursor
-
-class Database {
-
-}
+import com.example.minilemonspaceapp.DatabaseHelper
 
 class UserAPI(context: Context) {
-
     private val dbHelper: DatabaseHelper = DatabaseHelper(context)
 
     // Metode untuk menyimpan data pengguna ke database

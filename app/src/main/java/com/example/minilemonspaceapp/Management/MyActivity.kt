@@ -1,6 +1,7 @@
 package com.example.minilemonspaceapp.Management
 
 import RewardManagement
+import androidx.appcompat.app.AppCompatActivity
 
 class MyActivity : AppCompatActivity() {
 
