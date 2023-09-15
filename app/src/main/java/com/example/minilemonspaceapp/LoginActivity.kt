@@ -1,6 +1,7 @@
 package com.example.minilemonspaceapp
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -12,6 +13,7 @@ class LoginActivity : Activity() {
     private lateinit var usernameEditText: EditText
     private lateinit var passwordEditText: EditText
     private lateinit var loginButton: Button
+    private lateinit var create_account: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +23,7 @@ class LoginActivity : Activity() {
         usernameEditText = findViewById(R.id.form_username)
         passwordEditText = findViewById(R.id.form_password)
         loginButton = findViewById(R.id.btn_login)
+        create_account =findViewById(R.id.create_account)
 
         // Atur pendengar klik untuk tombol login
         loginButton.setOnClickListener(View.OnClickListener {
@@ -34,13 +37,16 @@ class LoginActivity : Activity() {
                 // Sebagai contoh, mulai aktivitas baru:
                 // val intent = Intent(this, NextActivity::class.java)
                 // startActivity(intent)
-
                 // Untuk contoh ini, kita akan menampilkan pesan toast
                 showToast("Login Berhasil!")
             } else {
                 // Login tidak valid, tampilkan pesan kesalahan
                 showToast("Username atau password tidak valid")
             }
+        })
+        create_account.setOnClickListener(View.OnClickListener {
+            // Ketika tombol "Create Account" diklik, navigasikan pengguna ke layar pendaftaran
+            val intent = Intent(this, CreateAccount::class.java) //
         })
     }
 

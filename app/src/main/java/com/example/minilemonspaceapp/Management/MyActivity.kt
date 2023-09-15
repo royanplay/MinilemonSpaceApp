@@ -1,13 +1,15 @@
 package com.example.minilemonspaceapp.Management
 
 import RewardManagement
+import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.minilemonspaceapp.R
 
 class MyActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_my)
+        setContentView(R.layout.activity_main)
 
         // Mendefinisikan ID pengguna (userId) dan ID hadiah (rewardId) jika diperlukan
         val userId = 1
